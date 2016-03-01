@@ -32,6 +32,37 @@ function userSubmit() {
 	});
 };
 
+//returns input to original placeholder text
+function clearInput() {
+		$('#city-type').val('');
+};
+
+//create an array
+
+var cities = ['NYC','SF','LA','ATX','SYD'];
+for (var i = 0; i < cities.length; i++) {
+	$('#city-options').append("<option val='cityname'>"+cities[i]+"</option>");
+}
+
+//change background with select
+$('#city-options').change(function() {
+	var city = $("#city-options").val();
+	//var city = $("#city-options option:selected").text();
+	//alert(city); USED TO ENSURE VAL CAPTURE
+	if (city === "SF") {
+		$("body").attr("class", "sf");
+	} else if (city === "NYC") {
+		$("body").attr("class", "nyc");
+	} else if (city === "LA") {
+		$("body").attr("class", "la");
+	} else if (city === "ATX") {
+		$("body").attr("class", "austin");
+	} else if (city === "SYD") {
+		$("body").attr("class", "sydney");
+	}
+	//how come the above could not be placed in a function?
+});
+
 //function defining the background changes
 function changeBackground () {
 	if (city === "San Francisco" || city === "SF" || city === "Bay Area") {
@@ -47,8 +78,19 @@ function changeBackground () {
 	}
 };
 
-//returns input to original placeholder text
-function clearInput() {
-		$('#city-type').val('');
+//function changing attribute of body background
+function dropdownBackground () {
+	$
+	if (city === "SF") {
+		$("body").attr("class", "sf");
+	} else if (city === "NYC") {
+		$("body").attr("class", "nyc");
+	} else if (city === "LA") {
+		$("body").attr("class", "la");
+	} else if (city === "ATX") {
+		$("body").attr("class", "austin");
+	} else if (city === "SYD") {
+		$("body").attr("class", "sydney");
+	}
 };
 
